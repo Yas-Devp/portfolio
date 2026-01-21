@@ -741,7 +741,7 @@
                 <a href="#skills" class="footer-link">Skills</a>
                 <a href="#contact" class="footer-link">Contact</a>
             </div>
-            <p class="copyright">&copy; 2023 Yassin. All rights reserved.</p>
+            <p class="copyright" id="cr" >copyrights</p>
         </div>
     </footer>
 
@@ -820,6 +820,11 @@
                 this.style.transform = 'translateY(0)';
             });
         });
+
+        const currentYear = new Date().getFullYear();
+        const cr = document.getElementById('cr');
+
+        cr.textContent = "&copy; " + currentYear+ "Yassin. All rights reserved."
     </script>
 </body>
 </html>
