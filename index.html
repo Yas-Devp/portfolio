@@ -493,6 +493,7 @@
             
             .mobile-menu-btn {
                 display: block;
+                margin-left: auto;
             }
             
             .projects-grid {
@@ -528,7 +529,7 @@
         <div class="container header-container">
             <a href="#home" class="logo">Yassin<span>Dev</span></a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button style="text-align:right;" class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             
@@ -546,6 +547,11 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-container">
+            <div class="hero-image fade-in">
+                <div class="code-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
             <div class="hero-content fade-in">
                 <h1>Hi, I'm <span>Yassin</span></h1>
                 <h2>Full-Stack Developer</h2>
@@ -553,11 +559,6 @@
                 <div class="hero-btns">
                     <a href="#projects" class="btn">View Projects</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
-            </div>
-            <div class="hero-image fade-in">
-                <div class="code-icon">
-                    <i class="fas fa-code"></i>
                 </div>
             </div>
         </div>
@@ -741,7 +742,7 @@
                 <a href="#skills" class="footer-link">Skills</a>
                 <a href="#contact" class="footer-link">Contact</a>
             </div>
-            <p class="copyright" id="cr" >copyrights</p>
+            <p class="copyright" id="cr" >&copy; </p>
         </div>
     </footer>
 
@@ -824,7 +825,7 @@
         const currentYear = new Date().getFullYear();
         const cr = document.getElementById('cr');
 
-        cr.textContent = "&copy; " + currentYear+ "Yassin. All rights reserved."
+        cr.textContent += currentYear+ " - Yassin. All rights reserved."
     </script>
 </body>
 </html>
