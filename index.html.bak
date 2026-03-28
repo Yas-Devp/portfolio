@@ -570,22 +570,6 @@
             <h2 class="section-title fade-in">My Projects</h2>
             
             <div class="projects-grid">
-                <!-- Car Rental WebSite-->
-                <div class="project-card fade-in">
-                    <div class="project-img">
-                        <i class="fas fa-clipboard"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Cars Booking WebSite (html, css, js)</h3>
-                        <p class="project-desc">Simple cars booking website made by html, css and js , frontend focused !</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Desktop App</span>
-                            <span class="tech-tag">System Tray</span>
-                        </div>
-                        <a href="https://github.com/Yas-Devp/MiniProject" target="_blank" class="btn">View on GitHub</a>
-                    </div>
-                </div>
                 <!-- Clipboard Manager -->
                 <div class="project-card fade-in">
                     <div class="project-img">
