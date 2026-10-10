@@ -1,149 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Yassin | MERN Stack Developer</title>
   <meta name="description" content="Yassin, 18, MERN stack developer from Morocco. Web apps, desktop tools and games.">
   <script>
-    // Set theme before first paint to avoid a flash
+    // Dark by default; use the saved choice if there is one
     (function () {
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') === 'light' ? 'light' : 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Reem+Kufi:wght@700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2">
-  <script src="js/main.js?v=2" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <div class="fx" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-<nav class="bar" aria-label="Pages">
-  <a class="bar-name" href="#p1">Yassin Loris</a>
-  <ul>
-    <li><a href="#p1"><span class="pn">p.1</span><span class="pl"> Intro</span></a></li>
-    <li><a href="#p2"><span class="pn">p.2</span><span class="pl"> Projects</span></a></li>
-    <li><a href="#p3"><span class="pn">p.3</span><span class="pl"> Skills</span></a></li>
-    <li><a href="#p4"><span class="pn">p.4</span><span class="pl"> Contact</span></a></li>
-    <li><button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="Toggle dark mode"></button></li>
-  </ul>
-</nav>
-
-<main>
-  <!-- PAGE 1 -->
-  <section class="page splash" id="p1">
-    <div class="lines" aria-hidden="true"></div>
-    <p class="caption">Chapter 1: A MERN developer from Morocco</p>
-    <div class="stamp" aria-label="Yassin in Arabic" lang="ar">ياسين</div>
-    <h1 class="title">Yassin</h1>
-    <span class="sfx sfx-don" aria-hidden="true">ドン!</span>
-    <div class="bubble bubble-hero">
-      <p>I'm 18. I build full-stack apps with MongoDB, Express, React and Node.</p>
-    </div>
-    <div class="cta">
-      <a class="btn" href="#p2">Read the projects</a>
-      <a class="btn btn-red" href="#p4">Say hello</a>
-    </div>
-  </section>
-
-  <!-- PAGE 2 -->
-  <section class="page" id="p2">
-    <h2 class="caption cap-h">Chapter 2: Things I've built</h2>
-    <div class="panels">
-      <article class="panel span-4 tone-dots">
-        <div class="art"><span class="sfx sfx-art" aria-hidden="true">コピー</span></div>
-        <div class="info">
-          <h3>Clipd, clipboard manager</h3>
-          <p>A C++ desktop app that remembers your clipboard history and lives in the system tray. Made for devs who copy a lot of snippets.</p>
-          <ul class="tags"><li>C++</li><li>Desktop</li><li>System tray</li></ul>
-          <a class="btn btn-sm" href="https://github.com/Yas-Devp/Clipd" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-
-      <article class="panel span-2 tone-lines">
-        <div class="art"><span class="sfx sfx-art" aria-hidden="true">ゴゴゴ</span></div>
-        <div class="info">
-          <h3>CPU usage monitor</h3>
-          <p>A small C program that shows live CPU usage in your terminal.</p>
-          <ul class="tags"><li>C</li><li>CLI</li></ul>
-          <a class="btn btn-sm" href="https://github.com/Yas-Devp/Cpu_Usage" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-
-      <article class="panel span-2 tone-cross">
-        <div class="art"><span class="sfx sfx-art" aria-hidden="true">ピッ</span></div>
-        <div class="info">
-          <h3>Sortify, colour sorting game</h3>
-          <p>A terminal puzzle where you sort colours into place. Levels get harder.</p>
-          <ul class="tags"><li>C</li><li>Game</li><li>Terminal</li></ul>
-          <a class="btn btn-sm" href="https://github.com/Yas-Devp/Sortify" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-
-      <article class="panel span-4 tone-dots">
-        <div class="art"><span class="sfx sfx-art" aria-hidden="true">ブーン</span></div>
-        <div class="info">
-          <h3>Cars booking website</h3>
-          <p>A car rental site focused on the front end: browse cars, pick one, book it.</p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="btn btn-sm" href="https://github.com/Yas-Devp/MiniProject" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-
-      <article class="panel span-6 tone-lines wide">
-        <div class="art"><span class="sfx sfx-art" aria-hidden="true">つづく</span></div>
-        <div class="info">
-          <h3>FindStay, hotel booking website</h3>
-          <p>Still in progress. The next chapter is coming.</p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="btn btn-sm" href="https://github.com/Yas-Devp/FindStay" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-    </div>
-    <p class="more"><a href="https://github.com/Yas-Devp" target="_blank" rel="noopener">More projects on my GitHub</a></p>
-  </section>
-
-  <!-- PAGE 3 -->
-  <section class="page" id="p3">
-    <h2 class="caption cap-h">Chapter 3: My techniques</h2>
-    <div class="stack">
-      <div class="panel tech tone-dots"><b>M</b><h3>MongoDB</h3><p>Where the data lives.</p></div>
-      <div class="panel tech tone-lines"><b>E</b><h3>Express.js</h3><p>Routes and APIs.</p></div>
-      <div class="panel tech tone-cross"><b>R</b><h3>React.js</h3><p>The interface people touch.</p></div>
-      <div class="panel tech tone-dots"><b>N</b><h3>Node.js</h3><p>The server that runs it all.</p></div>
-    </div>
-    <div class="side">
-      <p class="bubble bubble-side">Side techniques I also use:</p>
-      <ul class="tags tags-lg">
-        <li>JavaScript</li><li>HTML</li><li>CSS</li><li>Java</li><li>Python</li><li>C++</li><li>C</li>
+  <header class="nav">
+    <a class="nav-logo" href="#top">Yassin</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="btn btn-sm" id="themeBtn" type="button" aria-pressed="false">Light mode</button></li>
       </ul>
-    </div>
-  </section>
+    </nav>
+  </header>
 
-  <!-- PAGE 4 -->
-  <section class="page end" id="p4">
-    <h2 class="caption cap-h">Final page: Let's work together</h2>
-    <div class="bubble bubble-end">
-      <p>Got a project, an internship, or just a question about code? Message me.</p>
-    </div>
-    <div class="links">
-      <a class="btn" href="https://github.com/Yas-Devp" target="_blank" rel="noopener">GitHub: Yas-Devp</a>
-      <a class="btn" href="https://www.linkedin.com/in/yassin-loris-a79006387" target="_blank" rel="noopener">LinkedIn: Yassin Loris</a>
-      <a class="btn" href="https://youtube.com/@loris_yas" target="_blank" rel="noopener">YouTube: @loris_yas</a>
-      <a class="btn" href="https://www.facebook.com/LorisYas1" target="_blank" rel="noopener">Facebook: LorisYas1</a>
-    </div>
-    <p class="tbc" aria-hidden="true">つづく</p>
-  </section>
-</main>
+  <main id="top">
+    <section class="hero">
+      <h1 class="glitch">Yassin</h1>
+      <p class="role">MERN stack developer from Morocco</p>
+      <div class="actions">
+        <a class="btn" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Contact me</a>
+      </div>
+    </section>
 
-<footer>
-  <p>&copy; <span id="year"></span> Yassin. All rights reserved. To be continued.</p>
-</footer>
+    <section id="about">
+      <h2>About</h2>
+      <div class="card about">
+        <p>I'm Yassin, an 18-year-old developer from Morocco. I build full-stack web apps with the MERN stack, and I also write desktop tools and games in C and C++ because I like knowing how things work underneath.</p>
+        <ul class="tags" aria-label="Technologies">
+          <li>MongoDB</li><li>Express</li><li>React</li><li>Node.js</li>
+          <li>JavaScript</li><li>Java</li><li>Python</li><li>C++</li><li>C</li>
+        </ul>
+      </div>
+    </section>
 
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Clipd, clipboard manager</h3>
+          <p>A C++ desktop app that keeps your clipboard history and lives in the system tray. Made for devs who copy a lot of snippets.</p>
+          <ul class="tags"><li>C++</li><li>Desktop</li></ul>
+          <a class="btn" href="https://github.com/Yas-Devp/Clipd" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+        <article class="card">
+          <h3>Sortify, colour sorting game</h3>
+          <p>A terminal puzzle where you sort colours into the right positions. The levels get harder as you go.</p>
+          <ul class="tags"><li>C</li><li>Game</li></ul>
+          <a class="btn" href="https://github.com/Yas-Devp/Sortify" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+        <article class="card">
+          <h3>Cars booking website</h3>
+          <p>A car rental site focused on the front end: browse the cars, pick one and book it.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a class="btn" href="https://github.com/Yas-Devp/MiniProject" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+      </div>
+      <p class="more"><a href="https://github.com/Yas-Devp" target="_blank" rel="noopener">See all projects on GitHub</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Have a project, an internship or a question about code? Message me on any of these.</p>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Yas-Devp" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/yassin-loris-a79006387" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://youtube.com/@loris_yas" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn" href="https://www.facebook.com/LorisYas1" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>&copy; <span id="year"></span> Yassin. All rights reserved.</p></footer>
 </body>
 </html>
