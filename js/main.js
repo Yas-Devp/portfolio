@@ -26,3 +26,15 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   }, { threshold: 0.15 });
   panels.forEach((p) => io.observe(p));
 }
+
+// Theme toggle (dark / light), remembered between visits
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+const syncBtn = () => themeBtn.setAttribute('aria-pressed', root.dataset.theme === 'dark');
+syncBtn();
+themeBtn.addEventListener('click', () => {
+  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = next;
+  try { localStorage.setItem('theme', next); } catch (e) {}
+  syncBtn();
+});

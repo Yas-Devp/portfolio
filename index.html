@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yassin | MERN Stack Developer</title>
   <meta name="description" content="Yassin, 18, MERN stack developer from Morocco. Web apps, desktop tools and games.">
+  <script>
+    // Set theme before first paint to avoid a flash
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +26,11 @@
 <nav class="bar" aria-label="Pages">
   <a class="bar-name" href="#p1">Yassin Loris</a>
   <ul>
-    <li><a href="#p1">p.1 Intro</a></li>
-    <li><a href="#p2">p.2 Projects</a></li>
-    <li><a href="#p3">p.3 Skills</a></li>
-    <li><a href="#p4">p.4 Contact</a></li>
+    <li><a href="#p1"><span class="pn">p.1</span><span class="pl"> Intro</span></a></li>
+    <li><a href="#p2"><span class="pn">p.2</span><span class="pl"> Projects</span></a></li>
+    <li><a href="#p3"><span class="pn">p.3</span><span class="pl"> Skills</span></a></li>
+    <li><a href="#p4"><span class="pn">p.4</span><span class="pl"> Contact</span></a></li>
+    <li><button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="Toggle dark mode"></button></li>
   </ul>
 </nav>
 
